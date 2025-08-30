@@ -170,6 +170,15 @@ body {
 .product-card:hover .product-image {
     transform: scale(1.1);
 }
+.first-letter {
+    font-family: cursive;
+    color: #ed9f0d;
+    font-weight: bold;
+  }
+  .rest {
+    font-family: 'Segoe UI', sans-serif;
+    color: #e19110e3;
+  }
 
 .product-overlay {
     position: absolute;
