@@ -1,0 +1,330 @@
+/* Custom CSS for Anand Food Products */
+
+:root {
+    --primary-orange: #FF6B35;
+    --secondary-yellow: #FFD23F;
+    --accent-red: #E74C3C;
+    --dark-brown: #8B4513;
+    --light-cream: #FFF8E1;
+    --text-dark: #333333;
+    --text-light: #666666;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Custom Bootstrap Color Overrides */
+.text-primary {
+    color: var(--primary-orange) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-orange);
+    border-color: var(--primary-orange);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e55a2b;
+    border-color: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn-warning {
+    background-color: var(--secondary-yellow);
+    border-color: var(--secondary-yellow);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #e6bd33;
+    border-color: #e6bd33;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 210, 63, 0.3);
+}
+
+/* Navigation Styles */
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--primary-orange) !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-orange) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--accent-red) 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-image {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+/* Product Cards */
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2);
+}
+
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.product-overlay i {
+    color: var(--accent-red);
+    font-size: 1.2rem;
+}
+
+.product-rating {
+    margin-top: 12px;
+}
+
+.product-rating i {
+    font-size: 0.9rem;
+    margin: 0 2px;
+}
+
+/* Coming Soon Card */
+.coming-soon-card {
+    background: rgba(255, 107, 53, 0.05);
+    border: 2px dashed var(--primary-orange);
+    border-radius: 15px;
+    padding: 40px 20px;
+    transition: all 0.3s ease;
+}
+
+.coming-soon-card:hover {
+    background: rgba(255, 107, 53, 0.1);
+}
+
+.coming-soon-card i {
+    font-size: 3rem;
+}
+
+/* Contact Section */
+.contact-info-item {
+    padding: 30px 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-info-item i {
+    font-size: 2.5rem;
+    display: block;
+}
+
+/* Form Styles */
+.form-floating > label {
+    color: var(--text-light);
+}
+
+.form-control:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 53, 0.25);
+}
+
+/* Social Links */
+.social-links a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-yellow) !important;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        text-align: center;
+    }
+    
+    .product-image-wrapper {
+        height: 200px;
+    }
+    
+    .contact-info-item {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-3 {
+        font-size: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .product-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Padding */
+section {
+    padding-top: 80px;
+}
+
+#home {
+    padding-top: 0;
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Success Message */
+.success-message {
+    background: var(--light-cream);
+    border: 1px solid var(--secondary-yellow);
+    color: var(--dark-brown);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+    animation: slideUp 0.5s ease-out;
+}
